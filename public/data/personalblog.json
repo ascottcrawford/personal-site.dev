@@ -1,0 +1,25 @@
+[
+    {
+        "title": "Telecommunications to Communications",
+        "content": "Communications companies... ",
+        "categories": [
+            "telecom"
+        ],
+        "date": "June 17, 2016"
+    }, {
+        "title": "Real Time Communications",
+        "content": "Skype, Zoom",
+        "categories": [
+            "real time"
+          
+        ],
+        "date": "June 18, 2016"
+    }, {
+        "title": "Communities",
+        "content": "Facebook, LinkedIn,...",
+        "categories": [
+            "social network"
+        ],
+        "date": "June 19, 2016"
+    }
+]

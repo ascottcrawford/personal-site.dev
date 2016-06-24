@@ -1,0 +1,23 @@
+
+
+
+/*.btn-group-lg>.btn, .btn-lg {
+    padding: 10px 28px;
+    margin: 10px;
+}*/
+
+#plus, #minus, #multiply, #divide {
+	padding: 10px 65px;
+	max-width: 65px;
+
+}
+
+.container {
+	border: 1px blue solid;
+	width: 75%;
+}
+
+
+/*#result-field {
+	margin-top: 15px;
+}*/

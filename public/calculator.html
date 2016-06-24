@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Build A Calculator</title>
+    <meta charset="utf-8">
+    	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://use.fontawesome.com/70d063044b.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+	<link rel="stylesheet" href="/css/calculator.css">
+</head>
+<body>
+
+	<header class="page-header">
+        <h1>Calculator<small id="calculator"></small></h1>
+    </header>	        
+
+<div class = "container">
+
+		
+	<div role="form">
+		<div class = "row">
+			<div class="col-xs-6">
+						<form>
+							<div class="form-group">
+								<input type="text" class="form-control text-right" id="result-field" placeholder='' readonly>
+							</div>
+						</form>
+			</div>
+		</div>
+		 <div class="row">
+		 	<div class="col-xs-2">
+		                <form>
+		                    <div class="form-group">
+		                        <label for="name"></label>
+		                        <input type="text" class="form-control text-right" id="left-field" placeholder="" readonly>
+		                    </div>
+		                </form>
+		    </div>
+		    <div class="col-xs-2">
+		                <form>
+		                    <div class="form-group">
+		                        <label for="name"></label>
+		                        <input type="text" class="form-control text-center" id="action-field" placeholder="" readonly>
+		                    </div>
+		                </form>
+		    </div>
+		    <div class="col-xs-2">
+		                <form>
+		                    <div class="form-group">
+		                        <label for="name"></label>
+		                        <input type="text" class="form-control text-right" id="right-field" placeholder="" readonly>
+		                    </div>
+		                </form>
+		  
+		</div>
+	</div>
+				<div class="row">
+				  <div class="col-xs-1"><a type="button" class="btn btn-info btn-lg" id="one" data-value="1">1</a></div>
+				   <div class="col-xs-1"><a type="button" class="btn btn-info btn-lg" id="two" data-value="2">2</a></div>
+				   <div class="col-xs-1"><a type="button" class="btn btn-info btn-lg" id="three" data-value="3">3</a></div>
+				   <div class="col-xs-1"><a type="button" class="btn btn-primary btn-lg" id="plus" data-value="+">+</a></div>
+				</div>
+
+				<div class="row">
+				  <div class="col-xs-1"><a type="button" class="btn btn-info btn-lg" id="four" data-value="4">4</a></div>
+				   <div class="col-xs-1"><a type="button" class="btn btn-info btn-lg" id="five" data-value="5">5</a></div>
+				   <div class="col-xs-1"><a type="button" class="btn btn-info btn-lg" id="six" data-value="6">6</a></div>
+				   <div class="col-xs-1"><a type="button" class="btn btn-primary btn-lg" id="minus" data-value="-">-</a></div>
+				</div>
+
+				<div class="row">
+				  <div class="col-xs-1"><a type="button" class="btn btn-info btn-lg" id="seven" data-value="7">7</a></div>
+				   <div class="col-xs-1"><a type="button" class="btn btn-info btn-lg" id="eight" data-value="8">8</a></div>
+				   <div class="col-xs-1"><a type="button" class="btn btn-info btn-lg" id="nine" data-value="9">9</a></div>
+				   <div class="col-xs-1"><a type="button" class="btn btn-primary btn-lg" id="multiply" data-value="*">*</a></div>
+				</div>
+
+				<div class="row">
+				  <div class="col-xs-1"><a type="button" class="btn btn-default btn-lg" id="decimal" data-value=".">.</a></div>
+				   <div class="col-xs-1"><a type="button" class="btn btn-info btn-lg" id="zero" data-value="0">0</a></div>
+				   <div class="col-xs-1"><a type="button" class="btn btn-default btn-lg" id="equals" data-value="=">=</a></div>
+				   <div class="col-xs-1"><a type="button" class="btn btn-primary btn-lg" id="divide" data-value="/">/</a></div>
+				</div>
+
+				<div class="row">
+				  <div class="col-xs-1"><a type="button" class="btn btn-default btn-lg" id="clear">C</a></div>
+				  <div class="col-xs-1"><a type="button" class="btn btn-default btn-lg" id="percent">%</a></div>
+				  <div class="col-xs-1"><a type="button" class="btn btn-default btn-lg" id="posneg">+ -</a></div>
+				   <div class="col-xs-1"><a type="button" class="btn btn-default btn-lg" id="sqroot">√</a></div>
+				   <div class="col-xs-1"><a type="button" class="btn btn-default btn-lg" id="power" data-value="pwr">pwr</a></div>
+				</div>
+		
+	</div>
+</div>
+	<script src="js/calculator.js"></script>
+
+</body>
+</html>

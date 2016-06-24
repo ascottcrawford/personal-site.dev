@@ -1,0 +1,106 @@
+<html>
+<head>
+	<title>Weather Map</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		#googlemap {
+			height: 375px;
+		}
+		.row {
+			background-color: #ccddff;
+		}
+		.col-xs-4 {
+			padding: 30px;
+		}
+		table {
+			padding: 10px;
+			border-style: solid;
+    		border-color: #003e80;
+		}
+
+	</style>
+</head>
+<body>
+<h1>Weather - 3 day forecast</h1>
+<h3>Drag Map Marker to Update Location</h3>
+<table id="latlng">
+	<tr><td>Latitude</td><td><input type="text" id="latbox"></td></tr>
+	<tr><td>Longitude</td><td><input type="text" id="lngbox"></td></tr>
+</table>
+
+<div id="googlemap"></div>
+<div id="current"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVXLB1ax0Lu2jXGVvQHQUxhBH3CCcMHAY"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<h2 id="city"></h2>
+<div class="container-fluid">
+<div class="row" id="tablestats"></div>
+</div>
+
+<script>
+	"use strict";
+
+	(function() {
+
+		
+
+		var marker;
+
+		function initMap() {
+		  var myLatLng = {lat: 29.626403, lng: -98.608574};
+
+		  var map = new google.maps.Map(document.getElementById('googlemap'), {
+		    zoom: 5,
+		    center: myLatLng,
+		    mapTypeId: google.maps.MapTypeId.HYBRID
+		  });
+
+		  
+
+		  marker = new google.maps.Marker({
+		    position: myLatLng,
+		    draggable: true,
+		    map: map,
+		    title: 'Weather Map!'
+		  });
+
+		  google.maps.event.addListener(marker, 'dragend', function (event) {
+		  	$("#latbox").val(this.position.lat());
+		    $("#lngbox").val(this.position.lng());
+		    getWeather();
+		  });
+		}
+
+		function getWeather() {
+			$.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+			    APPID: "6eec00776145be2131baf58d960d3df3",
+			    lat: marker.position.lat(),
+			    lon: marker.position.lng(),
+			    units: "imperial",
+			    cnt: 3
+			}).done(function (weather) {
+				console.log(weather)
+				var threeDays = weather.list;
+				var cityName = weather.city.name;
+				$('#city').html(cityName);
+				$('#tablestats').html("");
+				threeDays.forEach(function (forecast) {
+				var table = "<div class='col-xs-4'><table><tr><td>" + forecast.temp.max + "°H / " + forecast.temp.min + "°L</td></tr>" + "<tr><td><img src=\"http://openweathermap.org/img/w/" + forecast.weather[0].icon + ".png\"></td></tr>" + "<tr><td>" + forecast.weather[0].main + ": " + forecast.weather[0].description + "</td></tr><tr><td>Humidity: " + forecast.humidity + "%</td></tr><tr><td>Wind: " + forecast.speed + " mph</td></tr><tr><td>Pressure: " + forecast.pressure + "</td></tr></table></div>"; 
+				$('#tablestats').html(table + $('#tablestats').html());
+			})
+		})
+		}
+
+		initMap();
+		getWeather();
+
+
+	})();
+
+
+</script>
+</body>
+</html>
+
