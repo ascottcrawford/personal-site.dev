@@ -5,20 +5,22 @@
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
+	
 	</head>
 	<body>
 		<div>
-		<ul class="nav nav-pills">
+		<div>
+			 <ul class="nav nav-pills">
 			  <li role="presentation" class="active"><a href="/personallanding.html">Home</a></li>
 			  <li role="presentation"><a href="/resume.html">Resume</a></li>
 			  <li role="presentation"><a href="/portfolio.html">Portfolio</a></li>
 			  <li role="presentation"><a href="/contact.php">Contact</a></li>
-			     <!--    <li><a href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-lg fa-google-plus"></i></a></li> -->
+             	<li><a href="https://twitter.com/scottcrawford77" target="_blank"><i class="fa fa-lg fa-twitter"></i></a></li>
+               <!--  <li><a href="#"><i class="fa fa-lg fa-google-plus"></i></a></li> --> 
                 <li><a href="https://www.linkedin.com/in/scott-crawford-0413832" target="_blank"><i class="fa fa-lg fa-linkedin"></i></a></li>
-		</ul>
-	</div>
+              <!--   <li><a href="tel:+1-210-920-8825">+1(210)920-8825</a></li> -->
+            </ul>
+        </div>
 		 <div col-md-5 "img-thumbnail">
 		 <div id="feedback"> <div class="container">
 		<div class="col-xs-12 col-md-8">
