@@ -1,8 +1,90 @@
+<!DOCTYPE html>
 <html>
-<head>
-	<title>Personal Site</title>
-</head>
-<body>
+	<head>
+		<title>Scott Crawford Resume</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://use.fontawesome.com/70d063044b.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+		<style>
+		body {
+			/*background-image: url("/img/aconcagua.jpg");*/
+			margin: 10px;
+	
+		}
+		#container {
+			padding: 50px;
+			opacity: .4;
+		}
 
-</body>
+		.parallax-window {
+	    height: 800px;
+	    background: transparent;
+	}
+
+		
+
+		</style>
+	</head>
+	<body>
+		<div>
+			 <ul class="nav nav-pills">
+			  <li role="presentation" class="active"><a href="/index.html">Home</a></li>
+			  <li role="presentation"><a href="/resume.html">Resume</a></li>
+			  <li role="presentation"><a href="/portfolio.html">Portfolio</a></li>
+			  <li role="presentation"><a href="/contact.php">Contact</a></li>
+             	<li><a href="https://twitter.com/scottcrawford77" target="_blank"><i class="fa fa-lg fa-twitter"></i></a></li>
+               <!--  <li><a href="#"><i class="fa fa-lg fa-google-plus"></i></a></li> --> 
+                <li><a href="https://www.linkedin.com/in/scott-crawford-0413832" target="_blank"><i class="fa fa-lg fa-linkedin"></i></a></li>
+                 <li><a href="mailto:ascrawford@me.com"><i class="fa fa-lg fa-envelope-o"></i></a></li>
+              <!--   <li><a href="tel:+1-210-920-8825">+1(210)920-8825</a></li> -->
+            </ul>
+        </div>
+	<p></p>
+	<div class="parallax-window" data-parallax="scroll" data-image-src="/img/aconcagua.jpg">
+	<div id="container">
+		<div class="row">
+        		<div class="col-xs-12">
+            			<div class="panel panel-default">
+	                		<div class="panel-heading">
+	                    		<h3 class="panel-title">Blog Posts</h3>
+	                		</div>
+                		<div class="panel-body">
+					        <div class="row">
+								<div class="col-xs-12">
+									<div id="posts">
+									</div>
+								</div>
+							</div>
+						</div>
+                		</div>
+                </div>
+        </div>        
+    </div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="/js/parallax.js"></script>
+
+	<script>
+		(function() {
+		    "use strict";
+
+		     function getData() {
+
+		        $.get("/data/personalblog.json").done(function(blog) {
+		            // $('#insertBlog').html(""); 
+		             blog.forEach(function(post, i) {
+		                   $('#posts').html("<h1>" + blog[i].title + "</h1><p>" + blog[i].content + "</p><h5>" + blog[i].categories.join(", ") + "</h5><h6>" + blog[i].date + "</h6>" + $('#posts').html());
+		                })
+		            });  
+		    }
+
+		    getData();
+
+		})();
+	</script>
+
+
+	</body>
 </html>
