@@ -1,12 +1,18 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<title>Scott Crawford Resume</title>
-	<!-- Latest compiled and minified CSS -->
+	<title>Parallax</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<style>
+	/*	.parallax-window {
+	    min-height: 500px;
+	    background: transparent;
+	}*/
+		.parallax-window {
+	    height: 500px;
+	    background: transparent;
+	}
 	#resumeheadshot {
 		margin-top: 50px;
 		height: 225px;
@@ -14,14 +20,19 @@
 		border-radius: 20%; 
 	}
 	body {
-		margin: 30px;
 		margin-bottom: 40px;
 	}
+
+	.container {
+		margin-top: 2px;
+	}
 	</style>
-	
+
+
 </head>
 <body>
-		<div>
+	
+	<div>
 			 <ul class="nav nav-pills">
 			  <li role="presentation" class="active"><a href="/index.html">Home</a></li>
 			  <li role="presentation"><a href="/resume.html">Resume</a></li>
@@ -34,7 +45,8 @@
                <!--  <li><a href="tel:+1-210-920-8825">+1(210)920-8825</a></li> -->
             </ul>
         </div>
-	<div class="container">
+    <!-- <div class="></div>     -->
+	<div class="container-fluid parallax-window" data-parallax="scroll" data-image-src="/img/elbrus.jpg">
 		<h1>Resume</h1>
 		<div class="row">
 			
@@ -119,8 +131,13 @@
 
 				
 	</div>
-	
-	<script src="https://use.fontawesome.com/70d063044b.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+
+<script src="https://use.fontawesome.com/70d063044b.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/js/parallax.js"></script>
+
+
+
 </body>
 </html>

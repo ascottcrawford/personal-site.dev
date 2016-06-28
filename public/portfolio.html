@@ -1,22 +1,35 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<title>Scott Crawford Portfolio</title>
-	<!-- Latest compiled and minified CSS -->
+	<title>Parallax</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="/CSS/personalsite.css">
+
 	<style>
-	.col-xs-12, .col-sm-6, .col-md-4, .col-lg-3 {
-		margin-top: 50px;
+	/*	.parallax-window {
+	    min-height: 500px;
+	    background: transparent;
+	}*/
+	.parallax-window {
+	    height: 800px;
+	    background: transparent;
 	}
+
+	.container {
+			margin-top: 2px;
+			padding: 50px;
+			opacity: .7;
+		}
+
 	body {
-		margin: 10px;
+		margin-bottom: 40px;
 	}
 	</style>
+
+
 </head>
 <body>
-		<div>
+	
+	<div>
 			 <ul class="nav nav-pills">
 			  <li role="presentation" class="active"><a href="/index.html">Home</a></li>
 			  <li role="presentation"><a href="/resume.html">Resume</a></li>
@@ -26,10 +39,12 @@
                <!--  <li><a href="#"><i class="fa fa-lg fa-google-plus"></i></a></li> --> 
                 <li><a href="https://www.linkedin.com/in/scott-crawford-0413832" target="_blank"><i class="fa fa-lg fa-linkedin"></i></a></li>
                 <li><a href="mailto:ascrawford@me.com"><i class="fa fa-lg fa-envelope-o"></i></a></li>
-              <!--   <li><a href="tel:+1-210-920-8825">+1(210)920-8825</a></li> -->
+               <!--  <li><a href="tel:+1-210-920-8825">+1(210)920-8825</a></li> -->
             </ul>
         </div>
-	<div class="container">
+    <!-- <div class="></div>     -->
+	<div class="container-fluid parallax-window" data-parallax="scroll" data-image-src="/img/kilimanjaro.jpg">
+	<!-- <div class="container"> -->
 			<div class="row">
         		<div class="col-xs-12">
             			<div class="panel panel-default">
@@ -114,6 +129,10 @@
 
 <script src="https://use.fontawesome.com/70d063044b.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
-               
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/js/parallax.js"></script>
+
+
+
 </body>
 </html>
