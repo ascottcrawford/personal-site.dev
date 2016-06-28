@@ -18,6 +18,7 @@
              	<li><a href="https://twitter.com/scottcrawford77" target="_blank"><i class="fa fa-lg fa-twitter"></i></a></li>
                <!--  <li><a href="#"><i class="fa fa-lg fa-google-plus"></i></a></li> --> 
                 <li><a href="https://www.linkedin.com/in/scott-crawford-0413832" target="_blank"><i class="fa fa-lg fa-linkedin"></i></a></li>
+                <li><a href="mailto:ascrawford@me.com"><i class="fa fa-lg fa-envelope-o"></i></a></li>
               <!--   <li><a href="tel:+1-210-920-8825">+1(210)920-8825</a></li> -->
             </ul>
         </div>

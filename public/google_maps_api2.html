@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Google Maps</title>
+	<style>
+		#googlemap {
+			height: 500px;
+		}
+	</style>
+</head>
+<body>
+	<h4>Google Map API - Favorite Restaurants</h4>
+
+	<div id="googlemap"></div>
+	 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVXLB1ax0Lu2jXGVvQHQUxhBH3CCcMHAY"></script>
+
+    <!-- Script to show address on map -->
+    <script type="text/javascript">
+    (function() {
+        "use strict";
+
+      
+        // Set our map options
+        var mapOptions = {
+            // Set the zoom level
+            zoom: 12,
+
+            // This sets the center of the map at our location
+            center: {
+                lat:  29.626403,
+                lng: -98.608574
+            },
+            mapTypeId: google.maps.MapTypeId.HYBRID
+            
+        };
+        
+    	
+
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("googlemap"), mapOptions);
+       
+
+
+
+        var geocoder = new google.maps.Geocoder();
+        var address = "17907 IH-10 West, San Antonio, TX 78257";
+
+        // Geocode our address
+        geocoder.geocode({ "address": address }, function(results, status) {
+
+		   // Check for a successful result
+		   if (status == google.maps.GeocoderStatus.OK) {
+
+		       // Recenter the map over the address
+		       map.setCenter(results[0].geometry.location);
+		       map.setZoom(12);
+		   } else {
+
+		       // Show an error message with the status if our request fails
+		       alert("Geocoding was not successful - STATUS: " + status);
+		   }
+		});
+
+		
+
+
+		var markers = [
+			{lat: 29.585704, lng: -98.596513, content: "<h5>Chuy's - Creamy Jalapeno Sauce!</h5><ul><li>Fajita's</li><li>Queso</li></ul>"},
+			{lat: 29.609489, lng: -98.598603, content: "<h5>HopDoddy - Best new place.</h5><ul><li>Llano Poblano Burger</li><li>Ahi Tuna Burger</li></ul>"},
+			{lat: 29.668381, lng: -98.631332, content: "<h5>Willies's - Best Place to let my son play.</h5><ul><li>Live Music Friday's</li><li>Kid's Sandbox</li></ul>"}
+		];
+
+		// loop through the array and log the values
+		markers.forEach(function (element) {
+		
+			var location = { lat: element.lat, lng: element.lng};
+			var image = "/img/restaurant.png"
+
+			// Add the marker to our existing map
+			var marker = new google.maps.Marker({
+			    position: location,
+			    animation: google.maps.Animation.DROP,
+			    map: map,
+			    icon: {
+				    	url: '/img/restaurant.png',
+				    	scale: 10
+				    }
+			});
+			var infowindow = new google.maps.InfoWindow({
+			    content: element.content
+			});
+			marker.addListener('click', function() {
+				infowindow.open(map, marker);
+			});
+
+			marker.addListener('click', function() {
+			map.setZoom(20);
+			map.setCenter(marker.getPosition());
+			});
+		    
+		});
+
+
+		var hopdoddy = { lat: 29.609489, lng: -98.598603 };
+
+		// Add the marker to our existing map
+		var marker1 = new google.maps.Marker({
+		    position: hopdoddy,
+		    animation: google.maps.Animation.DROP,
+		    map: map
+		});
+		var infowindow1 = new google.maps.InfoWindow({
+		    content: "<h5>HopDoddy - Best new place.</h5><ul><li>Llano Poblano Burger</li><li>Ahi Tuna Burger</li></ul>"
+		});
+		marker1.addListener('click', function() {
+		infowindow1.open(map, marker1);
+		});
+
+
+		var chuy = { lat: 29.585704, lng: -98.596513 };
+
+		// Add the marker to our existing map
+		var marker2 = new google.maps.Marker({
+		    position: chuy,
+		    animation: google.maps.Animation.DROP,
+		    map: map
+		});
+		var infowindow2 = new google.maps.InfoWindow({
+		    content: "<h5>Chuy's - Creamy Jalapeno Sauce!</h5><ul><li>Fajita's</li><li>Queso</li></ul>"
+		});
+		marker2.addListener('click', function() {
+		infowindow2.open(map, marker2);
+		});
+
+
+
+		var willies = { lat: 29.668381, lng: -98.631332 };
+
+		// Add the marker to our existing map
+		var marker3 = new google.maps.Marker({
+		    position: willies,
+		    animation: google.maps.Animation.DROP,
+		    map: map
+		});
+		var infowindow3 = new google.maps.InfoWindow({
+		    content: "<h5>Willies's - Best Place to let my son play.</h5><ul><li>Live Music Friday's</li><li>Kid's Sandbox</li></ul>"
+		});
+		marker3.addListener('click', function() {
+		infowindow3.open(map, marker3);
+		});
+
+
+    })();
+    </script>
+<!-- AIzaSyDVXLB1ax0Lu2jXGVvQHQUxhBH3CCcMHAY -->
+</body>
+</html>
